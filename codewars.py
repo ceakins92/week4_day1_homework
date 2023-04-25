@@ -39,8 +39,6 @@ def check(seq, elem):
 # Invalid smiley faces: ;( :> :} :]
 
 # THIS DIDN'T WORK, BUT I CAN'T FIGURE OUT WHY. IT DOESN'T CAPTURE ALL OCCURENCES
-
-
 # def count_smileys(arr):
 #    count = 0
 #    if arr == None:
@@ -53,7 +51,7 @@ def check(seq, elem):
 #    return count
 
 # I GOT THIS ONE TO WORK THO
-# Overall # O(n^2)
+# Overall  O(n^2)
 def count_smileys(arr):
     faces = []  # O(1)
     for things in arr:  # O(n)
@@ -63,3 +61,15 @@ def count_smileys(arr):
             faces.append(things)  # O(n)
     return len(faces)  # O(1)
 # I know there's a shorter way to do this.
+#
+#
+#
+# A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses #the letters A-Z at least once (case is irrelevant).
+# Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+# Overall O(n)
+
+
+def is_pangram(string):
+    alph_set = set(letter for letter in 'abcdefghijklmnopqrstuvwxyz')  # O(1)
+    return len(alph_set.difference(set(string.lower()))) < 1  # O(n)
